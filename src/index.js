@@ -1,5 +1,2 @@
-const calc = require('./calc.js');
-import chalk from 'chalk';
-calc.add(4,5);
-
-console.log(chalk.cyan('hello world!'));
+import './style.css';
+console.log('hello!!!');

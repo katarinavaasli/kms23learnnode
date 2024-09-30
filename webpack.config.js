@@ -19,13 +19,28 @@ module.exports = {
           test: /\.css$/i,
           use: ["style-loader", "css-loader"],
         },
+        {
+            test: /\.scss$/i,
+            use: ["style-loader", "css-loader", "sass-loader"],
+          },
+            {
+                test: /\.njk$/,
+                use: [
+                    {
+                        loader: 'simple-nunjucks-loader',
+                        options: {}
+                    }
+                ]
+            }
       ],
     },
   plugins: [
     new HtmlWebpackPlugin({
-        //title: 'Katarina app',
-        //filename: 'katarina.html',
-        template: './src/index.html'
-    })
+        template: './src/views/index.njk'
+    }),
+    new HtmlWebpackPlugin({
+        template: './src/views/about.njk',
+        filename: 'about.html'
+        })
     ],
 };

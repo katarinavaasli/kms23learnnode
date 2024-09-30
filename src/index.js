@@ -1,4 +1,4 @@
-import calc from './calc.js';
+const calc = require('./calc.js');
 import chalk from 'chalk';
 calc.add(4,5);
 

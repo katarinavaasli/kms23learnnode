@@ -1,5 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let pages = [];
+for(let i = 0; i<10; i++){
+    let page = new HtmlWebpackPlugin({
+        template: './src/views/page.njk',
+        filename: 'page'+ i +'.html' ,
+        templateParameters: {
+            page: i
+        } 
+    });
+    pages.push(page);
+}
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -41,6 +54,7 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: './src/views/about.njk',
         filename: 'about.html'
-        })
+        }),
+        ...pages
     ],
 };

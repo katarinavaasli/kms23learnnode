@@ -23,8 +23,19 @@ module.exports = {
           use: ["style-loader", "css-loader"],
         },
         {
-            test: /\.scss$/i,
-            use: ["style-loader", "css-loader", "sass-loader"],
+            test: /\.s[ac]css$/i,
+            use: [
+                "style-loader", 
+                "css-loader", 
+                {
+                    loader: "sass-loader", 
+                    options: {
+                        sassOptions: {
+                            quietDeps: true
+                        },
+                    }
+                }
+            ],
           },
             {
                 test: /\.njk$/,

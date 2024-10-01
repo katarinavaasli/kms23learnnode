@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
-    "start": "webpack serve --mode=development"
+    "start": "webpack serve --mode=development",
+    "deploy": "npm run build && surge ./dist katiscool.surge.sh"
   },
   "keywords": [],
   "author": "",
